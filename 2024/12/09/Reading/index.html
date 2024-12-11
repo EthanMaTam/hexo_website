@@ -5,40 +5,40 @@
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/hexo_website/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/hexo_website/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/hexo_website/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/hexo_website/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/hexo_website/css/main.css">
 
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ethanmatam.github.io","root":"/hexo_website/","images":"/hexo_website/images","scheme":"Muse","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/hexo_website/js/config.js"></script>
 
     <meta name="description" content="引言今天详细地读了一下这篇文章CasTL，主要的内容是提出了一个基于IMTMP这一TAMP规划器的LLM辅助规划器，主要应用在有长效任务需求的场景中。这篇文章的核心点跟我现在所做的内容有些像，具体在于：用LLM提取任务的约束，并在后续利用约束来完成任务（这一能力主要来自于IDTMP这款基于约束的规划器）。所以我看看能否借鉴一些地方。 论文主要内容动机 现如今的基于LLM的TAMP规划器一般都是让L">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CasTL_Reading">
-<meta property="og:url" content="http://example.com/2024/12/09/Reading/index.html">
+<meta property="og:url" content="https://ethanmatam.github.io/hexo_website/2024/12/09/Reading/index.html">
 <meta property="og:site_name" content="EthanMa Personal Website">
 <meta property="og:description" content="引言今天详细地读了一下这篇文章CasTL，主要的内容是提出了一个基于IMTMP这一TAMP规划器的LLM辅助规划器，主要应用在有长效任务需求的场景中。这篇文章的核心点跟我现在所做的内容有些像，具体在于：用LLM提取任务的约束，并在后续利用约束来完成任务（这一能力主要来自于IDTMP这款基于约束的规划器）。所以我看看能否借鉴一些地方。 论文主要内容动机 现如今的基于LLM的TAMP规划器一般都是让L">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/CasTL/CasTL_Process.png">
+<meta property="og:image" content="https://ethanmatam.github.io/hexo_website/images/CasTL/CasTL_Process.png">
 <meta property="article:published_time" content="2024-12-09T09:48:25.000Z">
 <meta property="article:modified_time" content="2024-12-09T14:46:04.183Z">
 <meta property="article:author" content="EthanMa">
 <meta property="article:tag" content="-Goal constraint -LLM&amp;Robotics">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/CasTL/CasTL_Process.png">
+<meta name="twitter:image" content="https://ethanmatam.github.io/hexo_website/images/CasTL/CasTL_Process.png">
 
 
-<link rel="canonical" href="http://example.com/2024/12/09/Reading/">
+<link rel="canonical" href="https://ethanmatam.github.io/hexo_website/2024/12/09/Reading/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/12/09/Reading/","path":"2024/12/09/Reading/","title":"CasTL_Reading"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ethanmatam.github.io/hexo_website/2024/12/09/Reading/","path":"2024/12/09/Reading/","title":"CasTL_Reading"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>CasTL_Reading | EthanMa Personal Website</title>
@@ -52,7 +52,7 @@
 
 
   <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
+    <link rel="stylesheet" href="/hexo_website/css/noscript.css">
   </noscript>
 </head>
 
@@ -72,7 +72,7 @@
 
   <div class="site-meta">
 
-    <a href="/" class="brand" rel="start">
+    <a href="/hexo_website/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">EthanMa Personal Website</p>
       <i class="logo-line"></i>
@@ -89,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/hexo_website/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/hexo_website/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/hexo_website/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/hexo_website/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/hexo_website/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/hexo_website/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li>
   </ul>
 </nav>
 
@@ -126,18 +126,18 @@
 <div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        <a href="/archives/">
+        <a href="/hexo_website/archives/">
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-          <a href="/categories/">
+          <a href="/hexo_website/categories/">
         <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/tags/">
+          <a href="/hexo_website/tags/">
         <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
@@ -165,10 +165,10 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/09/Reading/">
+    <link itemprop="mainEntityOfPage" href="https://ethanmatam.github.io/hexo_website/2024/12/09/Reading/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/hexo_website/images/avatar.gif">
       <meta itemprop="name" content="EthanMa">
     </span>
 
@@ -203,7 +203,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-LLM-TAMP/" itemprop="url" rel="index"><span itemprop="name">-论文阅读 -LLM&TAMP</span></a>
+          <a href="/hexo_website/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-LLM-TAMP/" itemprop="url" rel="index"><span itemprop="name">-论文阅读 -LLM&TAMP</span></a>
         </span>
     </span>
 
@@ -221,7 +221,7 @@
 <li>现如今的基于LLM的TAMP规划器一般都是让LLM直接输出动作序列。受限于LLM自身的规划（主要是逻辑推理和数学计算）能力，其很难解决存在复杂，非单调逻辑的有长效要求的TAMP问题。（的确，这个动机与我现在的项目几乎一样）</li>
 <li>在实际的任务当中，用户往往会加入一些额外的约束（比如指定哪个物体不能动，哪些区域不能去，个人理解这其实是一个非常大的领域，如果展开做内容相当多），如何兼顾这些实际存在的约束和完成任务，现在很少有人提及到，尤其是在使用LLM辅助机器人规划这一领域上。</li>
 </ol>
-<h2 id="做法概述"><a href="#做法概述" class="headerlink" title="做法概述"></a>做法概述</h2><p>这个规划框架的核心是2018年Lydia E. Kavraki实验室提出的基于约束的TAMP规划器<a target="_blank" rel="noopener" href="https://journals.sagepub.com/doi/full/10.1177/0278364918761570">IDTMP</a>。可以说，这篇文章的主要内容就是：如何把一个包含自然语言目标和自然语言约束的长效规划问题，转换成IDTMP这一规划器所能解决的TAMP问题。这也是我想着重参考的地方，至于IDTMP规划器的内在工作原理则作为次要的参考。<br><img src="/images/CasTL/CasTL_Process.png" alt="主要流程图"></p>
+<h2 id="做法概述"><a href="#做法概述" class="headerlink" title="做法概述"></a>做法概述</h2><p>这个规划框架的核心是2018年Lydia E. Kavraki实验室提出的基于约束的TAMP规划器<a target="_blank" rel="noopener" href="https://journals.sagepub.com/doi/full/10.1177/0278364918761570">IDTMP</a>。可以说，这篇文章的主要内容就是：如何把一个包含自然语言目标和自然语言约束的长效规划问题，转换成IDTMP这一规划器所能解决的TAMP问题。这也是我想着重参考的地方，至于IDTMP规划器的内在工作原理则作为次要的参考。<br><img src="/hexo_website/images/CasTL/CasTL_Process.png" alt="主要流程图"></p>
 <h2 id="做法的关键点"><a href="#做法的关键点" class="headerlink" title="做法的关键点"></a>做法的关键点</h2><h3 id="对约束的分类"><a href="#对约束的分类" class="headerlink" title="对约束的分类"></a>对约束的分类</h3><ol>
 <li><strong>Attribute Constraints:</strong> 源于物体属性的约束。以一个例子解释，带有床的卧室。表示“卧室”这一物体（object）的约束为带有床的（with bed）。<strong>个人对这个约束的定义比较疑惑，或许是为了符合IDTMP的规划过程。</strong></li>
 <li><strong>Eventual Constraints:</strong> 相当于任务目标。在规划完成后必须要满足的约束，或者说，不管完成任务的过程中真值是否为1,结束时必须为1。</li>
@@ -254,14 +254,14 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Goal-constraint-LLM-Robotics/" rel="tag"># -Goal constraint -LLM&Robotics</a>
+              <a href="/hexo_website/tags/Goal-constraint-LLM-Robotics/" rel="tag"># -Goal constraint -LLM&Robotics</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/12/09/hello-world/" rel="prev" title="Hello World">
+                <a href="/hexo_website/2024/12/09/hello-world/" rel="prev" title="Hello World">
                   <i class="fa fa-angle-left"></i> Hello World
                 </a>
             </div>
@@ -316,7 +316,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+<script src="/hexo_website/js/comments.js"></script><script src="/hexo_website/js/utils.js"></script><script src="/hexo_website/js/motion.js"></script><script src="/hexo_website/js/sidebar.js"></script><script src="/hexo_website/js/next-boot.js"></script>
 
   
 
